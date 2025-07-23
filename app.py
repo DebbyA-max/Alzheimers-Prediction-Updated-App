@@ -38,8 +38,8 @@ MemoryComplaints_encoded = 1 if MemoryComplaints == "Yes" else 0
 BehavioralProblems = st.radio("Presence of Behavioral Problems", ["Yes", "No"], key="bpe_input")
 BehavioralProblems_encoded = 1 if BehavioralProblems == "Yes" else 0
 
-FunctionalAssessment = st.number_input("Functional Assessment Score (0-10)", min_value=0.0, max_value=10.0, value=0.0, step=0.1, format="%.2f, key="fun_acc_input")
-MMSE = st.number_input("Mini-Mental State Examination score (0-30)", min_value=0.0, max_value=30.0, value=0.0, step=0.1, format="%.2f, key="MMSE_input")
+FunctionalAssessment = st.number_input("Functional Assessment Score (0-10)", min_value=0.0, max_value=10.0, value=0.0, step=0.1, format="%.2f", key="fun_acc_input")
+MMSE = st.number_input("Mini-Mental State Examination score (0-30)", min_value=0.0, max_value=30.0, value=0.0, step=0.1, format="%.2f", key="MMSE_input")
 
 
 input_data = np.array([[
