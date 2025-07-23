@@ -7,7 +7,7 @@ model = joblib.load("alzheimers_model_2.pkl")
 st.title("Alzheimer's Disease Prediction App")
 st.write("Enter the patient's data below to predict Alzheimer's Diagnosis.")
 
-Age = st.number_input("Patient's Age (between 60-90 years)", min_value=60, max_value=90, value=60, step=1, format="%d", key="age_input")
+Age = st.number_input("Patient's Age (60-90 years)", min_value=60, max_value=90, value=60, step=1, format="%d", key="age_input")
 
 education_options = [
     "0: None",
@@ -18,9 +18,8 @@ education_options = [
 education_selected = st.radio("Select the Patient's Education Level:", education_options, key="edu_input")
 EducationLevel_encoded = int(education_selected.split(":")[0])
 
-DietQuality = st.number_input("Diet Quality Score (between 0-10)", min_value=0.0,  max_value=10.0, value=0.0, step=0.1, format="%.2f", key="diq_input")
-
-SleepQuality = st.number_input("Sleep Quality Score (between 4-10)", min_value=4.0, max_value=10.0, value=4.0, step=0.1, format="%.2f", key="slp_input")
+DietQuality = st.number_input("Diet Quality Score (0-10)", min_value=0.0,  max_value=10.0, value=0.0, step=0.1, format="%.2f", key="diq_input")
+SleepQuality = st.number_input("Sleep Quality Score (4-10)", min_value=4.0, max_value=10.0, value=4.0, step=0.1, format="%.2f", key="slp_input")
 PhysicalActivity = st.number_input("Weekly Physical Activity (0-10 hours)", min_value=0.0, max_value=10.0, value=0.0, step=0.1, format="%.2f", key="pha_input")
 ADL = st.number_input("Activities of Daily Living Score (0-10)", min_value=0.0, max_value=10.0, value=0.0, step=0.1, format="%.2f", key="ADL_input")
 AlcoholConsumption = st.number_input("Weekly Alcohol Consumption (0-20 Units)", min_value=0.0, max_value=20.0, value=0.0, step=0.1, format="%.2f", key="alc_input")
